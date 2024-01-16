@@ -1,7 +1,7 @@
 # LearnHub API
 
-- API version: 2.0.0
-- Package version: 1.2.0
+- API version: 2.8.3
+- Package version: 1.1.3
 
 ## Installation
 
