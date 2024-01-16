@@ -13,7 +13,7 @@ async function getUser(apikey, email){
     let key = "Bearer" + apikey;
     try {
         let response = await axios.get(`https://api.nordicgamelab.org/v2/user?email=${email}`, {
-            Headers: {
+            headers: {
                 'Authorization': key
             }
         })
@@ -27,7 +27,7 @@ async function deleteUser(apikey, email){
     let key = "Bearer" + apikey;
     try {
         let response = await axios.delete(`https://api.nordicgamelab.org/v2/user?email=${email}`, {
-            Headers: {
+            headers: {
                 'Authorization': key
             }
         })
@@ -41,7 +41,7 @@ async function createUser(apikey, body){
     let key = "Bearer" + apikey;
     try{
         let response = await axios.post(`https://api.nordicgamelab.org/v2/user`, {
-            Headers: {
+            headers: {
                 'Authorization': key
             },
             body: body
