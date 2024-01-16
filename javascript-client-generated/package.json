@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "@sentry/node": "^7.64.0",
+    "@types/node": "^20.11.4",
     "axios": "^1.6.5"
   },
   "devDependencies": {
-    "@types/node": "^20.11.4",
     "typescript": "^5.3.3"
   }
 }
