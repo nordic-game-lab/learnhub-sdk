@@ -1,0 +1,40 @@
+name: Deploy code
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        registry-url: https://registry.npmjs.org/
+    - name: build
+      run: |
+        cd javascript-client-generated
+        npm ci
+        npm run build
+    - name: publish
+      run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+        
+#  release:
+#      runs-on: ubuntu-latest
+#      steps:
+#      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+#      - name: Create sentry release
+#        uses: getsentry/action-release@v1
+#        env:
+#         SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+#         SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+#         SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+#        with:
+#         environment: production
+#         version: ${{ github.event.release.name }}
