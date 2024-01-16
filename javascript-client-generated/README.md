@@ -13,7 +13,5 @@
 npm install @nordic-game-lab/learnhub-api
 ```
 
-## Getting Started
-
 ## Documentation
 https://docs.nordicgamelab.org/learnhub/api-sdk
