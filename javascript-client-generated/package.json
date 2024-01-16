@@ -4,12 +4,12 @@
   "description": "Object",
   "license": "MIT",
   "main": "dist/index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "browser": {
     "fs": false
   },
   "dependencies": {
+    "axios": "^1.6.5"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
