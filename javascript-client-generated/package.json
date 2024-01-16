@@ -4,7 +4,9 @@
   "description": "Object",
   "license": "MIT",
   "main": "dist/index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "npx tsc"
+},
   "browser": {
     "fs": false
   },
