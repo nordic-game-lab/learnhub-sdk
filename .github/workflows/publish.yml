@@ -20,10 +20,9 @@ jobs:
         cd javascript-client-generated
         npm ci
         npm run build
-    - name: publish
-      run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+    - run: npm publish --provenance --access public
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.npm_token}}
         
 #  release:
 #      runs-on: ubuntu-latest
