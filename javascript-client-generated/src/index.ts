@@ -11,7 +11,7 @@ export class Client {
     constructor(token: string) {
         this.token = "Bearer" + token;
         if (process.env.node_env == "testing") {
-            this.baseURL = "https://api.nordicgamelab.org";
+            this.baseURL = "https://api.staging.nordicgamelab.org";
         } else {
             this.baseURL = "https://api.nordicgamelab.org";
         }
