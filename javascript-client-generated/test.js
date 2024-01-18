@@ -41,6 +41,7 @@ async function isAuth(req, res, next) {
         console.log("sent 401");
         res.sendStatus(401);
         server.close()
+        throw new Error("auth did not work");
     }
 }
 
