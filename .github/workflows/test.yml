@@ -1,8 +1,8 @@
 name: Test code
 
 on:
-  commit:
-    branch: [main]
+  push:
+  pull_request:
   workflow_dispatch:
 
 jobs:
