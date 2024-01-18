@@ -1,1 +1,1 @@
-This is a monorepo of sdks
+This is a monorepo of sdks for learnhub
