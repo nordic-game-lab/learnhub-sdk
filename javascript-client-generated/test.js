@@ -11,8 +11,11 @@ async function user(){
 
 
 async function test(){
-    const email = await user();
-    if(email == {"email": "testuser@test.com"}){
+    const Users = await user();
+    console.log(Users);
+    const email = Users.email;
+    console.log(email);
+    if(email == "testuser@test.com"){
         console.log("cool");
         server.close();
     }else{

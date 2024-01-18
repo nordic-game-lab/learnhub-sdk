@@ -5,7 +5,7 @@ import 'dotenv/config';
 sentry.init({
     dsn: "https://50d8e7d5c25b42a89803e62b07182065@o4505149596303360.ingest.sentry.io/4505150012391424",
     tracesSampleRate: 1.0,
-    release: "ngl-api-sdk@" + process.env.npm_package_version
+    release: "learnHub-Sdk@" + process.env.npm_package_version
 });
 
 export class Client {
