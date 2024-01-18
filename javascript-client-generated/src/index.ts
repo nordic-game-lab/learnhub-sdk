@@ -1,5 +1,6 @@
 import axios from 'axios';
 import sentry from '@sentry/node';
+import 'dotenv/config';
 
 sentry.init({
     dsn: "https://50d8e7d5c25b42a89803e62b07182065@o4505149596303360.ingest.sentry.io/4505150012391424",
@@ -8,10 +9,12 @@ sentry.init({
 });
 
 export class Client {
+    token: string;
+    baseURL: string;
     constructor(token: string) {
-        this.token = "Bearer" + token;
+        this.token = "Bearer " + token;
         if (process.env.node_env == "testing") {
-            this.baseURL = "https://api.staging.nordicgamelab.org";
+            this.baseURL = "http://localhost:3000";
         } else {
             this.baseURL = "https://api.nordicgamelab.org";
         }
