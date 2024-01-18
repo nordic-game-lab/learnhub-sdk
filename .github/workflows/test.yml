@@ -8,22 +8,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
     steps:
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
     - uses: actions/setup-node@v3
       with:
         node-version: 18
-    - name: build
-      run: |
-        cd javascript-client-generated
-        npm i
-        npm run build
     - name: lint
       run: |
         cd javascript-client-generated
+        npm i
         npm run lint
+    - name: build
+      run: |
+        cd javascript-client-generated
+        npm run build
     - name: test
       run: |
         cd javascript-client-generated
