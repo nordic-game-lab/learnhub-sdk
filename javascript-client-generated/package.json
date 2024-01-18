@@ -4,18 +4,32 @@
   "description": "Object",
   "license": "MIT",
   "main": "dist/index.js",
+  "files": [
+    "/dist",
+    "package.json",
+    "package-lock.json",
+    "README.md"
+  ],
   "scripts": {
-    "build": "npx tsc"
+    "build": "npx tsc",
+    "dev:server": "node ./testing/server/server.js",
+    "dev:package": "node ./testing/index.js",
+    "lint": "npx eslint src/**",
+    "test": "node test.js"
   },
+  "type": "module",
   "browser": {
     "fs": false
   },
   "dependencies": {
     "@sentry/node": "^7.64.0",
-    "@types/node": "^20.11.4",
     "axios": "^1.6.5"
   },
   "devDependencies": {
+    "@types/node": "^20.11.5",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.56.0",
+    "express": "^4.18.2",
     "typescript": "^5.3.3"
   }
 }

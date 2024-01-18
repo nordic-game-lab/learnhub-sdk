@@ -19,7 +19,7 @@ jobs:
     - name: build
       run: |
         cd javascript-client-generated
-        npm ci
+        npm i
         npm run build
         npm publish --access public
       env:
