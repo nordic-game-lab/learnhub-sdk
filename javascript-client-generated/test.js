@@ -9,17 +9,14 @@ async function user(){
     return User;
 }
 
-async function logUser(){
-    const email = await user();
-    return email;
-}
 
-function test(){
-    if(logUser() == {"email": "testuser@test.com"}){
+async function test(){
+    const email = await user();
+    if(email == {"email": "testuser@test.com"}){
         console.log("cool");
         server.close();
     }else{
-        throw new Error("returned data is incorrect");
+        throw new Error(`returned data is incorrect. Data was ${email}`);
     }
 }
 
