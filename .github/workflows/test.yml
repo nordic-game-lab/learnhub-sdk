@@ -16,6 +16,7 @@ jobs:
     - name: lint
       run: |
         cd javascript-client-generated
+        export node_env=testing
         npm i
         npm run lint
     - name: build
