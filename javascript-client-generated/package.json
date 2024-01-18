@@ -3,6 +3,7 @@
   "version": "1.1.4",
   "description": "The Sdk for the LearnHub api.",
   "license": "MIT",
+  "homepage": "https://docs.nordicgamelab.org/learnhub/api-sdk",
   "main": "dist/index.js",
   "files": [
     "/dist",
