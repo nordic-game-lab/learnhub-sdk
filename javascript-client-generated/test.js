@@ -1,6 +1,6 @@
 // Test
 
-import { Client } from './dist/index.js';
+import { Client } from './dist/esm/index.js';
 
 const Learnhub = new Client("learnHub");
 
