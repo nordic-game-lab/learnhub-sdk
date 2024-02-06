@@ -5,6 +5,14 @@
   "license": "MIT",
   "homepage": "https://docs.nordicgamelab.org/learnhub/learnhub-node-js-sdk-documentation/",
   "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
+    }
+  },
   "files": [
     "/dist",
     "package.json",
@@ -12,7 +20,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npx tsc",
+    "dist": "make",
     "lint": "npx eslint src/**",
     "test": "node test.js"
   },
