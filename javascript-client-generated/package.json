@@ -20,7 +20,7 @@
     "README.md"
   ],
   "scripts": {
-    "dist": "make",
+    "build": "make",
     "lint": "npx eslint src/**",
     "test": "node test.js"
   },
