@@ -21,6 +21,7 @@ jobs:
         cd javascript-client-generated
         npm i
         npm run build
+        mv dist/cjs/index.js dist/cjs/index.cjs
         npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{secrets.npm_token}}
