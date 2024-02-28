@@ -1,0 +1,9 @@
+steps:
+  - name: lint
+    image: node:18.19
+    commands:
+      - npm i
+      - npm run lint
+      - echo "Building"
+      - npm run build
+      - npm run test
