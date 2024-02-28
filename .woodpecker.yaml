@@ -1,6 +1,6 @@
 steps:
   - name: lint
-    image: node:18.19
+    image: node:20.11
     commands:
       - npm i
       - npm run lint
