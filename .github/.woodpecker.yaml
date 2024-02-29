@@ -2,6 +2,7 @@ steps:
   - name: lint
     image: node:18.19
     commands:
+      - cd javascript-client-generated
       - npm i
       - npm run lint
       - echo "Building"
