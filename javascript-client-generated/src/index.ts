@@ -3,34 +3,36 @@ import axios from 'axios';
 export class Client {
     token: string;
     baseURL: string;
+     /**
+    * @param {string} token - Defaults to process.env['LEARNHUB_SDK_BEARER_TOKEN'].
+    */
     constructor(token: string) {
+        if(!token){
+          token = process.env['LEARNHUB_SDK_BEARER_TOKEN'];  
+          if(token == undefined){
+            throw new Error(
+                "The LEARNHUB_SDK_BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Learnhub client with an token option, like new Learnhub('My Bearer Token').",
+              );
+          }
+        }
         this.token = "Bearer " + token;
         if (process.env.node_env == "testing") {
             this.baseURL = "http://localhost:3000";
         } else {
             this.baseURL = "https://api.nordicgamelab.org";
         }
+
     }
 
-    get getuser(){
-        return this.getUser;
-    }
-    get deleteuser(){
-        return this.deleteUser;
-    }
-    get createuser(){
-        return this.createUser;
-    }
-
-    get getendpoint(){
-        return this.getEndpoint;
-    }
-
-    get postendpoint(){
-        return this.postEndpoint;
-    }
-
+    /**
+     * Email is a required string
+     * @param email - Email is a required string
+     * @returns 
+     */
     async getUser(email: string){
+        if(email == null){
+            throw new Error("Email is required");
+        }
         try {
             let response = await axios.get(`${this.baseURL}/v2/user?email=${email}`, {
                 headers: {
@@ -43,6 +45,11 @@ export class Client {
         }
     } 
 
+     /**
+     * Email is a required string
+     * @param email - Email is a required string
+     * @returns 
+     */
     async deleteUser(email: string){
         try {
             let response = await axios.delete(`${this.baseURL}/v2/user?email=${email}`, {
@@ -56,13 +63,25 @@ export class Client {
         }
     } 
 
-    async createUser(body){
+     /**
+     * Email is a required string
+     * @param {Required} email - Email is used in the creation of a user to determin factors shuch as the Organization the user is assigned to.
+     * @param {Required} name - Used in the UI and Emails. Required
+     * @returns {object}
+     */
+    async createUser(email: string, name: string){
+        if(!email || !name){
+            throw new Error("Email and Name are both required")
+        }
         try{
             let response = await axios.post(`${this.baseURL}/v2/user`, {
                 headers: {
                     'Authorization': this.token
                 },
-                body: body
+                body: {
+                    name: name,
+                    email: email
+                }
             })
             return response.data
         } catch(e){

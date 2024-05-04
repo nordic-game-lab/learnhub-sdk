@@ -5,8 +5,12 @@ import { Client } from './dist/esm/index.js';
 const Learnhub = new Client("learnHub");
 
 async function user(){
-    const User = Learnhub.getUser("testuser@test.com");
-    return User;
+    try{
+        const User = Learnhub.getUser("testuser@test.com");
+        return User;
+    } catch{
+        console.log("test failed")
+    }
 }
 
 
@@ -16,7 +20,7 @@ async function test(){
     const email = Users.email;
     console.log(email);
     if(email == "testuser@test.com"){
-        console.log("cool");
+        console.log("Test passed");
         server.close();
     }else{
         throw new Error(`returned data is incorrect. Data was ${email}`);
