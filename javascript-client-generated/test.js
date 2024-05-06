@@ -4,6 +4,7 @@ import { Client } from './dist/esm/index.js';
 
 const Learnhub = new Client("learnHub");
 
+
 async function user(){
     try{
         const User = Learnhub.getUser("testuser@test.com");

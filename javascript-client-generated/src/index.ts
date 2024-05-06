@@ -25,10 +25,13 @@ export class Client {
     }
 
     /**
-     * Email is a required string
-     * @param email - Email is a required string
-     * @returns 
-     */
+ * Retrieves user information based on the provided email address.
+ *
+ * @async
+ * @param {string} email - The email address of the user.
+ * @returns {Promise<object>} - An object containing user details (e.g., id, name, email, company).
+ * @throws {Error} - Throws an error if the email is null or if there's an issue with the API call.
+ */
     async getUser(email: string){
         if(email == null){
             throw new Error("Email is required");
@@ -46,10 +49,13 @@ export class Client {
     } 
 
      /**
-     * Email is a required string
-     * @param email - Email is a required string
-     * @returns 
-     */
+ * Deletes a user based on the provided email address.
+ *
+ * @async
+ * @param {string} email - The email address of the user to be deleted.
+ * @returns {Promise<string>} - A message indicating successful deletion (e.g., "User deleted").
+ * @throws {Error} - Throws an error if there's an issue with the API call.
+ */
     async deleteUser(email: string){
         try {
             let response = await axios.delete(`${this.baseURL}/v2/user?email=${email}`, {
