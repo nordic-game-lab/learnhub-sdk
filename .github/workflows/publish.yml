@@ -11,7 +11,7 @@ jobs:
     permissions:
       id-token: write
     steps:
-    - uses: actions/checkout@9a9194f87191a7e9055e3e9b95b8cfb13023bb08
+    - uses: actions/checkout@163217dfcd28294438ea1c1c149cfaf66eec283e
     - uses: actions/setup-node@v4
       with:
         node-version: 18
