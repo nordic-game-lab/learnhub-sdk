@@ -1,6 +1,6 @@
 {
   "name": "@nordic-game-lab/learnhub-api",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "The Sdk for the LearnHub api.",
   "license": "MIT",
   "homepage": "https://docs.nordicgamelab.org/learnhub/learnhub-node-js-sdk-documentation/",
@@ -33,7 +33,7 @@
     "@types/node": "^22.0.0",
     "dotenv": "^16.3.1",
     "eslint": "^9.0.0",
-    "express": "^4.18.2",
+    "express": "^5.0.0",
     "typescript": "^5.3.3"
   },
   "keywords": [
