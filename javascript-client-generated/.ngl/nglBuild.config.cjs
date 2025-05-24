@@ -12,8 +12,8 @@ module.exports = {
     outdir: path.resolve(process.cwd(), 'dist/esm'),   // Output bundle
     target: 'node20', // esbuild target (browser compatibility)
     format: 'esm',    // esbuild format (ES Module)
-    bundle: true,     // esbuild option
-    minify: true,     // esbuild option
+    bundle: false,     // esbuild option
+    minify: false,     // esbuild option
     sourcemap: false,  // esbuild option
     platform: 'node', // esbuild option
     tsconfig: 'tsconfig.esm.json', // Optional: specific tsconfig for web
@@ -28,7 +28,7 @@ module.exports = {
     // outfile: path.resolve(process.cwd(), 'dist/server/server.js'), // Use outdir for multiple files or outfile for a single bundle
     target: 'node20', // esbuild target (Node.js version)
     format: 'cjs',    // esbuild format (CommonJS for Node.js, or 'esm' if using Node.js ESM)
-    bundle: true,     // Set to false if you want to keep separate files, true to bundle
+    bundle: false,     // Set to false if you want to keep separate files, true to bundle
     minify: false,    // Usually not minified for server-side
     sourcemap: false,
     platform: 'node', // esbuild option
