@@ -43,3 +43,7 @@ labels:
     include:
       - '\bUpdate\b'
     exclude: []
+  'automerge':
+    include:
+      - '\b**Automerge**: Enabled\b'
+    exclude: []
