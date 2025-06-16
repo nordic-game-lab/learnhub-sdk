@@ -1,4 +1,7 @@
 name: PR Validation
+permissions:
+  contents: read
+  pull-requests: read
 on:
   pull_request:
     types: [opened, edited, synchronize, labeled, unlabeled, milestoned, demilestoned]
